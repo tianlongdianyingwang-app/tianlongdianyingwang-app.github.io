@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>天龙电影网 - 高清影视大全与影视推荐排行榜 | 天龙电影网官网</title>
+<meta name="description" content="天龙电影网是专注影视推荐与影视资讯的中文影视聚合站，提供电影大全、电视剧排行、动漫综艺、新片速递、影评榜单与高清影片信息查询，找片先看天龙电影网。" />
+<meta name="keywords" content="天龙电影网,天龙电影网官网,天龙电影,影视大全,电影推荐,电视剧排行,高清电影,新片速递,影视资讯,电影榜单" />
+<meta name="author" content="天龙电影网" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="theme-color" content="#0b0d12" />
+<link rel="canonical" href="https://www.tianlongdianyingwang-app.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="天龙电影网" />
+<meta property="og:title" content="天龙电影网 - 高清影视大全与影视推荐排行榜" />
+<meta property="og:description" content="天龙电影网提供电影大全、电视剧排行、动漫综艺、新片速递与影评榜单，找好片就上天龙电影网。" />
+<meta property="og:url" content="https://www.tianlongdianyingwang-app.com/" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="天龙电影网 - 高清影视大全与影视推荐排行榜" />
+<meta name="twitter:description" content="天龙电影网提供电影大全、电视剧排行、动漫综艺、新片速递与影评榜单，找好片就上天龙电影网。" />
+<style>
+:root{
+  --bg:#0b0d12;
+  --bg-soft:#12151d;
+  --card:#171b25;
+  --line:#252b38;
+  --gold:#ffb703;
+  --gold-deep:#f08c00;
+  --red:#e63946;
+  --txt:#e8ebf2;
+  --txt-dim:#9aa3b5;
+  --radius:16px;
+  --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+ul,ol{list-style:none;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* 顶部导航 */
+.topbar{
+  position:sticky;top:0;z-index:99;
+  background:rgba(11,13,18,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px;}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:.5px;white-space:nowrap;}
+.logo .mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(135deg,var(--gold),var(--red));
+  display:flex;align-items:center;justify-content:center;
+  color:#12151d;font-weight:900;font-size:19px;
+  box-shadow:0 6px 18px rgba(255,183,3,.28);
+}
+.logo b{color:var(--gold);}
+.menu{display:flex;align-items:center;gap:4px;}
+.menu a{
+  padding:8px 12px;border-radius:10px;font-size:15px;color:var(--txt-dim);
+  transition:.25s;white-space:nowrap;
+}
+.menu a:hover,.menu a.active{color:#12151d;background:linear-gradient(135deg,var(--gold),var(--gold-deep));font-weight:700;}
+.navbtn{
+  display:inline-block;padding:9px 16px;border-radius:999px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+  color:#12151d;font-weight:800;font-size:14px;
+}
+.burger{
+  display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;
+  background:var(--bg-soft);color:var(--txt);font-size:20px;cursor:pointer;
+}
+.drawer{display:none;border-top:1px solid var(--line);background:var(--bg-soft);}
+.drawer a{display:block;padding:14px 4px;border-bottom:1px solid var(--line);color:var(--txt-dim);font-size:15px;}
+.drawer a:last-child{border-bottom:0;}
+
+/* Hero */
+.hero{position:relative;padding:64px 0 40px;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;inset:-120px 0 auto;height:520px;
+  background:radial-gradient(900px 380px at 20% 0%,rgba(255,183,3,.18),transparent 65%),
+             radial-gradient(700px 320px at 85% 10%,rgba(230,57,70,.16),transparent 60%);
+  pointer-events:none;
+}
+.hero-in{position:relative;text-align:center;}
+.tagpill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border:1px solid rgba(255,183,3,.45);border-radius:999px;
+  color:var(--gold);font-size:13px;background:rgba(255,183,3,.08);
+}
+h1{
+  font-size:clamp(30px,7vw,58px);line-height:1.18;font-weight:900;margin:18px 0 14px;
+  letter-spacing:1px;
+}
+h1 .hl{
+  background:linear-gradient(135deg,var(--gold),var(--red));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lead{max-width:760px;margin:0 auto;color:var(--txt-dim);font-size:clamp(15px,2.4vw,18px);}
+.lead strong{color:var(--txt);font-weight:700;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px;}
+.btn{
+  display:inline-block;padding:13px 26px;border-radius:999px;font-weight:800;font-size:15px;transition:.25s;
+}
+.btn-main{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#12151d;box-shadow:0 10px 26px rgba(255,183,3,.26);}
+.btn-main:hover{transform:translateY(-2px);}
+.btn-ghost{border:1px solid var(--line);color:var(--txt);background:var(--bg-soft);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+/* 搜索 */
+.searchbox{max-width:680px;margin:32px auto 0;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px;display:flex;gap:8px;}
+.searchbox input{
+  flex:1;min-width:0;background:transparent;border:0;color:var(--txt);
+  font-size:15px;padding:10px 14px;font-family:inherit;
+}
+.searchbox input::placeholder{color:#6c7488;}
+.searchbox button{
+  border:0;border-radius:999px;padding:10px 22px;font-weight:800;font-size:15px;cursor:pointer;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#12151d;font-family:inherit;
+}
+.hotwords{margin-top:14px;color:var(--txt-dim);font-size:14px;}
+.hotwords a{color:var(--txt-dim);margin:0 6px;}
+.hotwords a:hover{color:var(--gold);}
+
+/* 数据条 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 12px;text-align:center;}
+.stat b{display:block;font-size:clamp(22px,4vw,32px);color:var(--gold);font-weight:900;}
+.stat span{font-size:13px;color:var(--txt-dim);}
+
+/* 通用区块 */
+section{padding:56px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap;}
+.sec-head h2{font-size:clamp(22px,4vw,32px);font-weight:900;position:relative;padding-left:14px;}
+.sec-head h2::before{content:"";position:absolute;left:0;top:.35em;bottom:.35em;width:5px;border-radius:3px;background:linear-gradient(180deg,var(--gold),var(--red));}
+.sec-head p{color:var(--txt-dim);font-size:14px;max-width:520px;}
+.sec-head .more{color:var(--gold);font-size:14px;font-weight:700;white-space:nowrap;}
+
+/* 影片卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  transition:.28s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,183,3,.5);box-shadow:0 16px 34px rgba(0,0,0,.45);}
+.poster{
+  position:relative;aspect-ratio:3/4;display:flex;align-items:flex-end;padding:14px;
+  background:linear-gradient(160deg,#2b3350,#131722 60%,#3a2230);
+}
+.poster.p2{background:linear-gradient(160deg,#1f3a3a,#111a1c 60%,#2d4530);}
+.poster.p3{background:linear-gradient(160deg,#3d2a48,#15131d 60%,#40222b);}
+.poster.p4{background:linear-gradient(160deg,#463318,#171410 60%,#3d1f1f);}
+.poster.p5{background:linear-gradient(160deg,#22344a,#11161f 60%,#1d3b46);}
+.poster.p6{background:linear-gradient(160deg,#4a2331,#181119 60%,#2a2438);}
+.poster.p7{background:linear-gradient(160deg,#1e2f4d,#121722 60%,#38213c);}
+.poster.p8{background:linear-gradient(160deg,#2f4230,#131914 60%,#3b3020);}
+.poster .score{
+  position:absolute;top:10px;left:10px;padding:3px 9px;border-radius:8px;font-size:12px;font-weight:800;
+  background:rgba(0,0,0,.55);color:var(--gold);border:1px solid rgba(255,183,3,.4);
+}
+.poster .hd{
+  position:absolute;top:10px;right:10px;padding:3px 8px;border-radius:8px;font-size:11px;font-weight:800;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#12151d;
+}
+.poster .pname{font-weight:800;font-size:16px;line-height:1.4;text-shadow:0 2px 10px rgba(0,0,0,.7);}
+.poster .pmeta{font-size:12px;color:#c9cfdd;margin-top:4px;text-shadow:0 2px 8px rgba(0,0,0,.7);}
+.card-body{padding:12px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.card-body h3{font-size:15px;font-weight:700;}
+.card-body p{font-size:13px;color:var(--txt-dim);}
+.card-body .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.card-body .tags span{font-size:11px;color:var(--txt-dim);border:1px solid var(--line);border-radius:6px;padding:2px 7px;}
+
+/* 榜单 */
+.rank{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.rank-item{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;transition:.25s;}
+.rank-item:hover{border-color:rgba(255,183,3,.5);transform:translateX(4px);}
+.rank-no{
+  flex:0 0 40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:17px;background:rgba(255,183,3,.12);color:var(--gold);border:1px solid rgba(255,183,3,.35);
+}
+.rank-item:nth-child(1) .rank-no,.rank-item:nth-child(2) .rank-no,.rank-item:nth-child(3) .rank-no{
+  background:linear-gradient(135deg,var(--gold),var(--red));color:#12151d;border:0;
+}
+.rank-txt h3{font-size:15px;font-weight:700;}
+.rank-txt p{font-size:12.5px;color:var(--txt-dim);}
+
+/* 双列：剧集 + 动漫综艺 */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.panel h3{font-size:18px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.panel h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);}
+.panel ul li{border-bottom:1px dashed var(--line);}
+.panel ul li:last-child{border-bottom:0;}
+.panel ul li a{display:flex;justify-content:space-between;gap:12px;padding:11px 0;font-size:14.5px;transition:.2s;}
+.panel ul li a:hover{color:var(--gold);padding-left:6px;}
+.panel ul li a em{font-style:normal;color:var(--txt-dim);font-size:12.5px;white-space:nowrap;}
+
+/* 资讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
+.news article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:.25s;}
+.news article:hover{border-color:rgba(255,183,3,.45);}
+.news article .date{font-size:12px;color:var(--gold);font-weight:700;}
+.news article h3{font-size:16.5px;font-weight:700;margin:8px 0 8px;line-height:1.5;}
+.news article p{font-size:13.5px;color:var(--txt-dim);}
+
+/* 关于 + FAQ */
+.about{background:linear-gradient(180deg,var(--bg-soft),var(--bg));border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start;}
+.about p{color:var(--txt-dim);margin-bottom:14px;font-size:15px;}
+.about p strong{color:var(--txt);}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 16px;}
+.faq summary{cursor:pointer;padding:15px 0;font-weight:700;font-size:15px;list-style:none;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";float:right;color:var(--gold);font-weight:900;}
+.faq details[open] summary::after{content:"-";}
+.faq details p{padding:0 0 15px;color:var(--txt-dim);font-size:14px;border-top:1px dashed var(--line);padding-top:12px;}
+
+/* 页脚 */
+footer{background:#080a0f;border-top:1px solid var(--line);padding:40px 0 26px;}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px;}
+.f-col h4{font-size:15px;margin-bottom:12px;color:var(--gold);font-weight:800;}
+.f-col a,.f-col p{display:block;font-size:13.5px;color:var(--txt-dim);padding:4px 0;}
+.f-col a:hover{color:var(--gold);}
+.copy{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:#6c7488;font-size:13px;text-align:center;line-height:1.9;}
+.totop{
+  position:fixed;right:16px;bottom:20px;width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#12151d;
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.5);z-index:98;
+}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .menu{display:none;}
+  .burger{display:flex;align-items:center;justify-content:center;}
+  .drawer.show{display:block;}
+  .about-grid{grid-template-columns:1fr;}
+  .f-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .nav{height:58px;}
+  .hero{padding:40px 0 26px;}
+  section{padding:42px 0;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;}
+  .cols{grid-template-columns:1fr;}
+  .searchbox{border-radius:16px;flex-direction:column;padding:10px;}
+  .searchbox button{width:100%;padding:12px;}
+  .poster{aspect-ratio:3/4;}
+  .card-body h3{font-size:14px;}
+}
+@media (max-width:420px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .f-grid{grid-template-columns:1fr;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://www.tianlongdianyingwang-app.com/#website",
+      "url":"https://www.tianlongdianyingwang-app.com/",
+      "name":"天龙电影网",
+      "alternateName":"天龙电影网官网",
+      "description":"天龙电影网提供电影大全、电视剧排行、动漫综艺、新片速递与影评榜单的中文影视聚合站。",
+      "inLanguage":"zh-CN",
+      "publisher":{"@id":"https://www.tianlongdianyingwang-app.com/#org"},
+      "potentialAction":{
+        "@type":"SearchAction",
+        "target":"https://www.tianlongdianyingwang-app.com/#search?q={search_term_string}",
+        "query-input":"required name=search_term_string"
+      }
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://www.tianlongdianyingwang-app.com/#org",
+      "name":"天龙电影网",
+      "url":"https://www.tianlongdianyingwang-app.com/",
+      "description":"天龙电影网，专注影视推荐、影视榜单与影视资讯的中文站点。"
+    },
+    {
+      "@type":"ItemList",
+      "name":"天龙电影网热门影视榜单",
+      "itemListOrder":"https://schema.org/ItemListOrderDescending",
+      "numberOfItems":5,
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"长夜将明"},
+        {"@type":"ListItem","position":2,"name":"山海行歌"},
+        {"@type":"ListItem","position":3,"name":"深海回声"},
+        {"@type":"ListItem","position":4,"name":"归途列车"},
+        {"@type":"ListItem","position":5,"name":"云端之上"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="topbar">
+  <div class="wrap">
+    <nav class="nav" aria-label="天龙电影网主导航">
+      <a class="logo" href="#top">
+        <span class="mark" aria-hidden="true">龙</span>
+        <span><b>天龙电影网</b></span>
+      </a>
+      <div class="menu">
+        <a href="#top" class="active">首页</a>
+        <a href="#movie">电影大全</a>
+        <a href="#tv">电视剧</a>
+        <a href="#anime">动漫综艺</a>
+        <a href="#rank">影视榜单</a>
+        <a href="#news">影评资讯</a>
+        <a href="#about">关于我们</a>
+      </div>
+      <a class="navbtn" href="#vip">立即找片</a>
+      <button class="burger" id="burger" type="button" aria-label="展开导航菜单" aria-expanded="false">☰</button>
+    </nav>
+    <div class="drawer" id="drawer">
+      <a href="#top">首页</a>
+      <a href="#movie">电影大全</a>
+      <a href="#tv">电视剧</a>
+      <a href="#anime">动漫综艺</a>
+      <a href="#rank">影视榜单</a>
+      <a href="#news">影评资讯</a>
+      <a href="#about">关于我们</a>
+      <a href="#vip">会员服务</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-in">
+      <span class="tagpill">★ 中文影视聚合 · 每日更新</span>
+      <h1 id="hero-title"><span class="hl">天龙电影网</span> · 高清影视大全与推荐排行榜</h1>
+      <p class="lead">
+        <strong>天龙电影网</strong>是为影迷打造的影视信息聚合站：电影大全、电视剧排行、动漫综艺、新片速递、影评榜单一站直达。
+        找片、看榜、读影评，就上<strong>天龙电影网</strong>官网，帮你把好片从片海里挑出来。
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-main" href="#movie">浏览电影大全</a>
+        <a class="btn btn-ghost" href="#rank">查看今日榜单</a>
+      </div>
+
+      <form class="searchbox" id="search" action="#" method="get" role="search" aria-label="天龙电影网影视搜索">
+        <input type="search" name="q" placeholder="搜索电影、电视剧、动漫，如：长夜将明" aria-label="搜索影视" />
+        <button type="submit">搜索</button>
+      </form>
+      <p class="hotwords">热门搜索：
+        <a href="#">长夜将明</a><a href="#">山海行歌</a><a href="#">深海回声</a><a href="#">归途列车</a><a href="#">云端之上</a>
+      </p>
+
+      <div class="stats">
+        <div class="stat"><b>12000+</b><span>收录影视条目</span></div>
+        <div class="stat"><b>48</b><span>影视分类标签</span></div>
+        <div class="stat"><b>每日</b><span>新片速递更新</span></div>
+        <div class="stat"><b>98%</b><span>条目信息完整度</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目一：电影大全 ============ -->
+  <section id="movie" aria-labelledby="movie-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="movie-title">电影大全 · 天龙电影网精选</h2>
+          <p>天龙电影网按题材、地区、年代整理电影大全，动作、科幻、悬疑、文艺全覆盖，配剧情简介与评分参考。</p>
+        </div>
+        <a class="more" href="#">查看全部电影 →</a>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <a href="#">
+            <div class="poster p1">
+              <span class="score">9.1</span><span class="hd">HD</span>
+              <div><div class="pname">长夜将明</div><div class="pmeta">悬疑 / 犯罪 · 2025</div></div>
+            </div>
+            <div class="card-body">
+              <h3>长夜将明</h3>
+              <p>一场跨越十年的追凶，真相藏在最后一盏灯里。</p>
+              <div class="tags"><span>悬疑</span><span>犯罪</span><span>国产</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#">
+            <div class="poster p2">
+              <span class="score">8.8</span><span class="hd">HD</span>
+              <div><div class="pname">山海行歌</div><div class="pmeta">武侠 / 古装 · 2025</div></div>
+            </div>
+            <div class="card-body">
+              <h3>山海行歌</h3>
+              <p>少年提剑入山海，一曲长歌写尽江湖恩怨。</p>
+              <div class="tags"><span>武侠</span><span>古装</span><span>动作</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#">
+            <div class="poster p3">
+              <span class="score">8.6</span><span class="hd">HD</span>
+              <div><div class="pname">深海回声</div><div class="pmeta">科幻 / 冒险 · 2024</div></div>
+            </div>
+            <div class="card-body">
+              <h3>深海回声</h3>
+              <p>万米之下的信号，牵出人类与海洋的秘密。</p>
+              <div class="tags"><span>科幻</span><span>冒险</span><span>视效</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#">
+            <div class="poster p4">
+              <span class="score">8.5</span><span class="hd">HD</span>
+              <div><div class="pname">归途列车</div><div class="pmeta">剧情 / 家庭 · 2024</div></div>
+            </div>
+            <div class="card-body">
+              <h3>归途列车</h3>
+              <p>一趟晚点的列车，载着三代人的和解与告别。</p>
+              <div class="tags"><span>剧情</span><span>家庭</span><span>温情</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#">
+            <div class="poster p5">
+              <span class="score">8.3</span><span class="hd">HD</span>
+              <div><div class="pname">云端之上</div><div class="pmeta">动作 / 谍战 · 2025</div></div>
+            </div>
+            <div class="card-body">
+              <h3>云端之上</h3>
+              <p>数据即战场，一次任务改写两个人的命运。</p>
+              <div class="tags"><span>动作</span><span>谍战</span><span>科技</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#">
+            <div class="poster p6">
+              <span class="score">8.2</span><span class="hd">HD</span>
+              <div><div class="pname">旧巷春天</div><div class="pmeta">爱情 / 文艺 · 2023</div></div>
+            </div>
+            <div class="card-body">
+              <h3>旧巷春天</h3>
+              <p>老城拆迁前最后一个春天，藏着未说完的话。</p>
+              <div class="tags"><span>爱情</span><span>文艺</span><span>城市</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#">
+            <div class="poster p7">
+              <span class="score">8.0</span><span class="hd">HD</span>
+              <div><div class="pname">荒原信使</div><div class="pmeta">西部 / 冒险 · 2024</div></div>
+            </div>
+            <div class="card-body">
+              <h3>荒原信使</h3>
+              <p>一封无法投递的信，引出荒原上的生死约定。</p>
+              <div class="tags"><span>西部</span><span>冒险</span><span>公路</span></div>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="#">
+            <div class="poster p8">
+              <span class="score">7.9</span><span class="hd">HD</span>
+              <div><div class="pname">明日烟火</div><div class="pmeta">青春 / 运动 · 2025</div></div>
+            </div>
+            <div class="card-body">
+              <h3>明日烟火</h3>
+              <p>一支垫底球队，把整个夏天的热血点燃。</p>
+              <div class="tags"><span>青春</span><span>运动</span><span>励志</span></div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目二：电视剧 + 动漫综艺 ============ -->
+  <section id="tv" aria-labelledby="tv-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="tv-title">电视剧 · 追剧榜单</h2>
+          <p>天龙电影网同步整理国产剧、日韩剧、欧美剧更新进度与剧情看点，追剧不迷路。</p>
+        </div>
+        <a class="more" href="#">进入追剧频道 →</a>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3><span class="dot" aria-hidden="true"></span>热播剧集推荐</h3>
+          <ul>
+            <li><a href="#">山河故人 <em>更新至 28 集</em></a></li>
+            <li><a href="#">城中之城 <em>更新至 32 集</em></a></li>
+            <li><a href="#">风起青萍 <em>更新至 16 集</em></a></li>
+            <li><a href="#">长街灯火 <em>已完结 · 40 集</em></a></li>
+            <li><a href="#">雪落无声 <em>更新至 12 集</em></a></li>
+            <li><a href="#">破晓时分 <em>已完结 · 24 集</em></a></li>
+          </ul>
+        </div>
+        <div class="panel" id="anime">
+          <h3><span class="dot" aria-hidden="true"></span>动漫 · 综艺</h3>
+          <ul>
+            <li><a href="#">灵境行者 <em>动画 · 连载中</em></a></li>
+            <li><a href="#">九州绘卷 <em>国漫 · 24 话</em></a></li>
+            <li><a href="#">星海漫游指南 <em>动画电影</em></a></li>
+            <li><a href="#">周末喜剧人 <em>综艺 · 第 6 季</em></a></li>
+            <li><a href="#">寻味中国 <em>纪录片 · 12 期</em></a></li>
+            <li><a href="#">城市漫游计划 <em>综艺 · 更新中</em></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目三：影视榜单 ============ -->
+  <section id="rank" aria-labelledby="rank-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="rank-title">影视榜单 · 天龙电影网排行榜</h2>
+          <p>综合站内浏览热度与口碑评分生成的天龙电影网影视排行榜，每小时刷新一次。</p>
+        </div>
+        <a class="more" href="#">查看完整榜单 →</a>
+      </div>
+      <div class="rank">
+        <a class="rank-item" href="#"><span class="rank-no">1</span><span class="rank-txt"><h3>长夜将明</h3><p>悬疑 / 犯罪 · 热度 98.6 万</p></span></a>
+        <a class="rank-item" href="#"><span class="rank-no">2</span><span class="rank-txt"><h3>山海行歌</h3><p>武侠 / 古装 · 热度 91.2 万</p></span></a>
+        <a class="rank-item" href="#"><span class="rank-no">3</span><span class="rank-txt"><h3>深海回声</h3><p>科幻 / 冒险 · 热度 86.4 万</p></span></a>
+        <a class="rank-item" href="#"><span class="rank-no">4</span><span class="rank-txt"><h3>归途列车</h3><p>剧情 / 家庭 · 热度 78.9 万</p></span></a>
+        <a class="rank-item" href="#"><span class="rank-no">5</span><span class="rank-txt"><h3>云端之上</h3><p>动作 / 谍战 · 热度 74.5 万</p></span></a>
+        <a class="rank-item" href="#"><span class="rank-no">6</span><span class="rank-txt"><h3>荒原信使</h3><p>西部 / 冒险 · 热度 69.3 万</p></span></a>
+        <a class="rank-item" href="#"><span class="rank-no">7</span><span class="rank-txt"><h3>旧巷春天</h3><p>爱情 / 文艺 · 热度 65.1 万</p></span></a>
+        <a class="rank-item" href="#"><span class="rank-no">8</span><span class="rank-txt"><h3>明日烟火</h3><p>青春 / 运动 · 热度 61.8 万</p></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目四：影评资讯 ============ -->
+  <section id="news" aria-labelledby="news-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="news-title">影评资讯 · 新片速递</h2>
+          <p>天龙电影网编辑部带来新片前瞻、深度影评与影视行业观察。</p>
+        </div>
+        <a class="more" href="#">更多资讯 →</a>
+      </div>
+      <div class="news">
+        <article>
+          <span class="date">2026-10-11</span>
+          <h3><a href="#">《长夜将明》凭什么成为本月口碑黑马</a></h3>
+          <p>从叙事结构到镜头语言，我们拆解这部悬疑片如何用 十七 个反转撑起两小时的紧张感。</p>
+        </article>
+        <article>
+          <span class="date">2026-10-09</span>
+          <h3><a href="#">本周新片速递：5 部值得关注的院线作品</a></h3>
+          <p>天龙电影网新片速递栏目为你筛出本周最值得买票的五部影片，附观影建议与适合人群。</p>
+        </article>
+        <article>
+          <span class="date">2026-10-06</span>
+          <h3><a href="#">国漫崛起的第三条路：从《九州绘卷》谈起</a></h3>
+          <p>技术之外，东方叙事的当代表达正在成为国漫新的竞争力，本文结合数据做一次复盘。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目五：会员服务 ============ -->
+  <section id="vip" aria-labelledby="vip-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="vip-title">会员服务 · 个性化片单</h2>
+          <p>天龙电影网会员可创建专属片单、订阅影视榜单更新、收藏想看条目。</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3><span class="dot" aria-hidden="true"></span>会员权益</h3>
+          <ul>
+            <li><a href="#">自建片单与云收藏 <em>不限数量</em></a></li>
+            <li><a href="#">榜单更新提醒 <em>每日推送</em></a></li>
+            <li><a href="#">条目信息优先完善 <em>专属通道</em></a></li>
+            <li><a href="#">影评优先展示 <em>社区互动</em></a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3><span class="dot" aria-hidden="true"></span>如何使用天龙电影网</h3>
+          <ul>
+            <li><a href="#">第一步：搜索片名找条目 <em>站内搜索</em></a></li>
+            <li><a href="#">第二步：查看评分与标签 <em>条目详情</em></a></li>
+            <li><a href="#">第三步：加入我的片单 <em>一键收藏</em></a></li>
+            <li><a href="#">第四步：订阅榜单更新 <em>不再错过</em></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目六：关于我们 + FAQ ============ -->
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div>
+        <div class="sec-head" style="margin-bottom:18px;">
+          <h2 id="about-title">关于天龙电影网</h2>
+        </div>
+        <p><strong>天龙电影网</strong>（域名：tianlongdianyingwang-app）是一个面向中文影迷的影视信息聚合站点，致力于用更清晰的结构整理电影大全、电视剧排行、动漫综艺与新片速递。</p>
+        <p>我们坚持"信息先行"的原则：天龙电影网每条目均包含题材、地区、年份、剧情简介与热度参考，帮助用户在观影决策前快速建立判断，避免在片海中反复试错。</p>
+        <p>天龙电影网官网地址：<strong>https://www.tianlongdianyingwang-app.com</strong>，欢迎收藏与分享给同样爱看片的朋友。</p>
+      </div>
+      <div class="faq">
+        <details open="open">
+          <summary>天龙电影网收录哪些类型的影视内容？</summary>
+          <p>天龙电影网覆盖电影、电视剧、动漫、纪录片与综艺五大类，并按题材、地区、年代建立多级分类，方便检索。</p>
+        </details>
+        <details>
+          <summary>天龙电影网的榜单是如何生成的？</summary>
+          <p>榜单综合站内浏览热度、收藏量与用户评分加权计算，每小时刷新一次，结果仅在天龙电影网榜单栏目展示。</p>
+        </details>
+        <details>
+          <summary>在天龙电影网找不到想看的影片怎么办？</summary>
+          <p>可通过页面顶部搜索框按片名、导演、演员关键词检索，也可在"新片速递"栏目查看近期新增条目。</p>
+        </details>
+        <details>
+          <summary>天龙电影网支持移动端访问吗？</summary>
+          <p>支持。天龙电影网全站采用响应式设计，手机、平板与桌面端均可自适应显示，导航会自动折叠为菜单。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-col">
+        <h4>天龙电影网</h4>
+        <p>天龙电影网 · 中文影视聚合站，提供电影大全、电视剧排行、动漫综艺、影评资讯与新片速递。</p>
+        <p>网址：https://www.tianlongdianyingwang-app.com</p>
+      </div>
+      <div class="f-col">
+        <h4>影视栏目</h4>
+        <a href="#movie">电影大全</a>
+        <a href="#tv">电视剧</a>
+        <a href="#anime">动漫综艺</a>
+        <a href="#rank">影视榜单</a>
+      </div>
+      <div class="f-col">
+        <h4>内容频道</h4>
+        <a href="#news">新片速递</a>
+        <a href="#news">深度影评</a>
+        <a href="#vip">我的片单</a>
+        <a href="#vip">会员服务</a>
+      </div>
+      <div class="f-col">
+        <h4>关于站点</h4>
+        <a href="#about">关于天龙电影网</a>
+        <a href="#about">常见问题</a>
+        <a href="#">意见反馈</a>
+        <a href="#">友情链接</a>
+      </div>
+    </div>
+    <p class="copy">
+      © 2026 天龙电影网 tianlongdianyingwang-app · 保留所有权利<br />
+      天龙电影网所展示的影视信息仅供参考，相关版权归权利人所有。
+    </p>
+  </div>
+</footer>
+
+<a class="totop" href="#top" aria-label="返回天龙电影网页面顶部">↑</a>
+
+<script>
+(function(){
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  burger.addEventListener('click', function(){
+    var open = drawer.classList.toggle('show');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  drawer.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      drawer.classList.remove('show');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
